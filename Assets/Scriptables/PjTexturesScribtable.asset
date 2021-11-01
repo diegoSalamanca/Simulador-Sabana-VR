@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da90d98bf1f10445ba98302ac8edfa4, type: 3}
+  m_Name: PjTexturesScribtable
+  m_EditorClassIdentifier: 
+  maleSpritesSkin1:
+  - {fileID: 21300000, guid: d47a2a78d676e304a896dca3c6b57863, type: 3}
+  - {fileID: 21300000, guid: ef3a46e0d14e63e4b8a1f9de08b59540, type: 3}
+  - {fileID: 21300000, guid: 77f04f03a721e45409e7bedd9fe42b6f, type: 3}
+  femaleSpritesSkin1:
+  - {fileID: 21300000, guid: 2a36bb01372f31b4a8e2be06c4cdefaa, type: 3}
+  - {fileID: 21300000, guid: f9480237be1aae142ae093e4f1c424ab, type: 3}
+  - {fileID: 21300000, guid: 9713c23584076514080e676468316dab, type: 3}
+  maleSpritesSkin2:
+  - {fileID: 21300000, guid: 1e66c6aa46171ff47b48eb87d02b63d5, type: 3}
+  - {fileID: 21300000, guid: 6beb2645652c8884ca9ae32370a5b203, type: 3}
+  - {fileID: 21300000, guid: a4c21318ceec3c4429af47eea19aecfe, type: 3}
+  femaleSpritesSkin2:
+  - {fileID: 21300000, guid: 2819586ddae9e6d4e9aa91183116441b, type: 3}
+  - {fileID: 21300000, guid: bab3c397013d03c42b81fdcf3ec8ce38, type: 3}
+  - {fileID: 21300000, guid: 657b3fab299251740b78ace7673083c8, type: 3}
+  maleSpritesSkin3:
+  - {fileID: 21300000, guid: c39db8a44b4c903459ebcff0f0a324fd, type: 3}
+  - {fileID: 21300000, guid: 707db23fc0b89ac4d89efdacc098d965, type: 3}
+  - {fileID: 21300000, guid: 916814137a7154b43bd4f6b855538931, type: 3}
+  femaleSpritesSkin3:
+  - {fileID: 21300000, guid: dee7e63d03429534b905d84edb4cf06b, type: 3}
+  - {fileID: 21300000, guid: 6a719f02daa142d4cae31d6f79d1ad34, type: 3}
+  - {fileID: 21300000, guid: cb15d57e320db874b8967882e0487239, type: 3}

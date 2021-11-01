@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class VirtualKeyBoard : MonoBehaviour
 {
 
-    public TMPro.TMP_InputField InputFieldSelected;
+    public InputField InputFieldSelected;
     bool Minus = false;
 
     public GameObject[] NumericLines;
@@ -45,7 +46,7 @@ public class VirtualKeyBoard : MonoBehaviour
     }
     public void ShowKeyBoard(GameObject Inputobject)
     {
-        InputFieldSelected = Inputobject.GetComponent<TMPro.TMP_InputField>();
+        InputFieldSelected = Inputobject.GetComponent<InputField>();
         transform.localScale = Vector3.one * ScaleAnim;
     }
 
