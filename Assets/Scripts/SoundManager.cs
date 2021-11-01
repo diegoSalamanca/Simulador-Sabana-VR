@@ -22,14 +22,19 @@ public class SoundManager : MonoBehaviour
 
    
 
-    public AudioClip buttonUiSound;
+    public AudioClip UserInterfaceClick, AuidoRecognicerStart;
     private AudioSource AudioSource;
 
     public void PlaybuttonUiSound()
     {
-        AudioSource.clip = buttonUiSound;
-        AudioSource.time = 0.2f;
-        AudioSource.Play();
+        //AudioSource.clip = buttonUiSound;
+       // AudioSource.time = 0.2f;
+        //AudioSource.Play();
+        AudioSource.PlayOneShot(UserInterfaceClick);
+    }
+    public void PlayAuidoRecognicerStartSound()
+    {        
+        AudioSource.PlayOneShot(AuidoRecognicerStart);
     }
 
     void Start()

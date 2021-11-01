@@ -3,7 +3,10 @@ using UnityEngine.Android;
 using UnityEngine.Events;
 using SpeechRecognitionSystem;
 
+
 public class AudioRecorder : MonoBehaviour, IMicrophone {
+    
+    
     public int MicrophoneIndex = 0;
     public int GetRecordPosition( ) {
         return Microphone.GetPosition( _deviceName );
@@ -20,7 +23,8 @@ public class AudioRecorder : MonoBehaviour, IMicrophone {
 
     public MicReadyEvent MicReady = new MicReadyEvent( );
 
-    private void Awake( ) {
+    private void Awake( ) {        
+
         if ( Application.platform == RuntimePlatform.Android ) {
             if ( !Permission.HasUserAuthorizedPermission( Permission.Microphone ) ) {
                 Permission.RequestUserPermission( Permission.Microphone );
@@ -28,19 +32,30 @@ public class AudioRecorder : MonoBehaviour, IMicrophone {
         }
     }
 
+    
+
     private void FixedUpdate( ) {
-        bool micAutorized = true;
-        if ( Application.platform == RuntimePlatform.Android ) {
-            micAutorized = Permission.HasUserAuthorizedPermission( Permission.Microphone );
-        }
-        if ( micAutorized ) {
-            if ( _firstLoad ) {
-                _deviceName = Microphone.devices [ MicrophoneIndex ];
-                _audioClip = Microphone.Start( _deviceName, true, LENGTH_SEC, FREQ );
-                this.MicReady?.Invoke( this );
-                _firstLoad = false;
+                   
+        
+        //if (Controller.activateAction.action.IsPressed() && StartRecognicer)
+        
+            bool micAutorized = true;
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                micAutorized = Permission.HasUserAuthorizedPermission(Permission.Microphone);
             }
-        }
+            if (micAutorized)
+            {
+                if (_firstLoad)
+                {
+                    _deviceName = Microphone.devices[MicrophoneIndex];
+                    _audioClip = Microphone.Start(_deviceName, true, LENGTH_SEC, FREQ);
+                    this.MicReady?.Invoke(this);
+                    _firstLoad = false;
+                }
+            }
+        
+        
     }
     private void OnDestroy( ) {
         Microphone.End( _deviceName );

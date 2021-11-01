@@ -11,6 +11,8 @@ public class VirtualKeyBoard : MonoBehaviour
     public GameObject[] NumericLines;
     public GameObject[] AlphabeticLines;
 
+    public float ScaleAnim;
+
     void Start()
     {
         transform.localScale = Vector3.zero;
@@ -44,7 +46,7 @@ public class VirtualKeyBoard : MonoBehaviour
     public void ShowKeyBoard(GameObject Inputobject)
     {
         InputFieldSelected = Inputobject.GetComponent<TMPro.TMP_InputField>();
-        transform.localScale = Vector3.one;
+        transform.localScale = Vector3.one * ScaleAnim;
     }
 
     public void HideKeyBoard()

@@ -3,9 +3,17 @@ using UnityEngine.Android;
 using UnityEngine.Events;
 using SpeechRecognitionSystem;
 using System.Threading;
+using UnityEngine.InputSystem;
 
 internal class SpeechRecognizer : MonoBehaviour {
-    public string LanguageModelDirPath = "SpeechRecognitionSystem/model/english_small";
+    public string LanguageModelDirPath = "SpeechRecognitionSystem/model/spanish";
+
+    public UnityEngine.XR.Interaction.Toolkit.ActionBasedController Controller;
+    public GameObject VoiceFillInstruction;
+
+    public CanvasGroup SoundInfoCanvasGroup;
+
+    bool IsRecogniced = false;
 
     public void OnMicrophoneReady( IMicrophone microphone ) {
         if ( Application.platform == RuntimePlatform.Android ) {
@@ -26,15 +34,27 @@ internal class SpeechRecognizer : MonoBehaviour {
     private void onInitResult( string modelDirPath ) {
         if ( modelDirPath != string.Empty ) {
              _init = _sr.Init( modelDirPath );
-            LogMessageReceived?.Invoke( "Say something..." );
+            //LogMessageReceived?.Invoke( "Say something..." );
         }
         else {
-            LogMessageReceived?.Invoke( "Error on copying streaming assets" );
+            //LogMessageReceived?.Invoke( "Error on copying streaming assets" );
         }
     }
 
-    private void onReceiveLogMess( string message ) {
-        LogMessageReceived?.Invoke( message );
+    private void onReceiveLogMess( string message ) {        
+        LogMessageReceived?.Invoke( message );      
+    }
+
+    public void WriteUIInput(string value)
+    {
+        if (FindObjectOfType<VirtualKeyBoard>())
+        {            
+            var InputField = FindObjectOfType<VirtualKeyBoard>().InputFieldSelected;
+            if (InputField)
+            {
+                InputField.text = value;
+            }
+        }
     }
 
     private void Awake( ) {
@@ -47,22 +67,73 @@ internal class SpeechRecognizer : MonoBehaviour {
         }
     }
 
+    public void OnActionKey(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            /*if (IsRecogniced)
+            {
+                
+            }*/
+            IsRecogniced = true;
+            _result = string.Empty;
+            _partialResult = string.Empty;
+            _resultReady = 0;
+            LogMessageReceived?.Invoke("");
+            SoundManager.Instance.PlayAuidoRecognicerStartSound();
+            SoundInfoCanvasGroup.alpha = 1;
+            VoiceFillInstruction.SetActive(false);
+            return;
+        }
+        else if (value.canceled)
+        {
+            /*IsRecogniced = false;
+            SoundInfoCanvasGroup.alpha = 0;
+            VoiceFillInstruction.SetActive(true);*/
+            SetResult(_partialResult);
+            return;
+        }        
+    }
+
+    public void SetResult(string result)
+    {
+        IsRecogniced = false;
+        SoundInfoCanvasGroup.alpha = 0;
+        WriteUIInput(result);
+        VoiceFillInstruction.SetActive(true);
+    }
+
+
     private void FixedUpdate( ) {
+        
+
         if ( Application.platform == RuntimePlatform.Android ) {
             if ( !_copyRequested && Permission.HasUserAuthorizedPermission( Permission.ExternalStorageWrite ) ) {
                 copyAssets2ExternalStorage( LanguageModelDirPath );
                 _copyRequested = true;
             }
         }
-        if ( _init && ( _microphone != null ) && _microphone.IsRecording( ) ) {
-            recognize( );
-            if ( _resultReady == 0 ) {
+        if (_init && (_microphone != null) && _microphone.IsRecording()) {
+
+
+            if (!IsRecogniced)
+            {                
+                return;
+            }
+
+            recognize();
+
+            if ( _resultReady == 0 ) 
+            {
                 _result = string.Empty;
                 if ( _partialResult != string.Empty )
                     PartialResultReceived?.Invoke( _partialResult );
-            } else {
+            } 
+            else
+            {
                 if ( _result != string.Empty ) {
                     ResultReceived?.Invoke( _result );
+                    //SetResult(_result);
                 }
             }
         }
@@ -80,7 +151,7 @@ internal class SpeechRecognizer : MonoBehaviour {
                 } else {
                     var result = _sr.GetResult( );
                     if ( result.text != string.Empty ) {
-                        _result = result.text;
+                        _result = result.text;                        
                     }
                 }
             }
@@ -128,6 +199,11 @@ internal class SpeechRecognizer : MonoBehaviour {
             }
         }
         _lastSample = pos;
+    }
+
+    public void ResultReciever(string result)
+    { 
+    
     }
 
     private SpeechRecognitionSystem.SpeechRecognizer _sr = null;
