@@ -13,6 +13,8 @@ internal class SpeechRecognizer : MonoBehaviour {
 
     public CanvasGroup SoundInfoCanvasGroup;
 
+    public PatientSpeakerController PatientSpeakerController;
+
     bool IsRecogniced = false;
 
     public void OnMicrophoneReady( IMicrophone microphone ) {
@@ -70,10 +72,10 @@ internal class SpeechRecognizer : MonoBehaviour {
     public void OnActionKey(InputAction.CallbackContext value)
     {
         if (value.started)
-        {            
+        {                        
             IsRecogniced = true;
             _result = string.Empty;
-            _partialResult = string.Empty;
+            _partialResult = string.Empty;            
             _resultReady = 0;
             LogMessageReceived?.Invoke("");
             SoundManager.Instance.PlayAuidoRecognicerStartSound();
@@ -82,15 +84,15 @@ internal class SpeechRecognizer : MonoBehaviour {
             return;
         }
         else if (value.canceled)
-        {
-           
-            SetResult(_partialResult);
+        {            
+            SetResult(_partialResult);            
             return;
         }        
     }
 
     public void SetResult(string result)
     {
+        PatientSpeakerController.AnalizeString(_partialResult);
         IsRecogniced = false;
         SoundInfoCanvasGroup.alpha = 0;
         WriteUIInput(result);
@@ -126,7 +128,7 @@ internal class SpeechRecognizer : MonoBehaviour {
             else
             {
                 if ( _result != string.Empty ) {
-                    ResultReceived?.Invoke( _result );
+                    //ResultReceived?.Invoke( _result );
                     //SetResult(_result);
                 }
             }
@@ -193,11 +195,6 @@ internal class SpeechRecognizer : MonoBehaviour {
             }
         }
         _lastSample = pos;
-    }
-
-    public void ResultReciever(string result)
-    { 
-    
     }
 
     private SpeechRecognitionSystem.SpeechRecognizer _sr = null;
