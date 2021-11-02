@@ -8,4 +8,6 @@ public class OptionsScriptable : ScriptableObject
     public string[] Options;
 
     public string AnimationName;
+
+    public AudioClip PatienteResponse;
 }

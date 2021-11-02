@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option0
+  m_Name: Option 13
   m_EditorClassIdentifier: 
   Options:
-  - "Buenos d\xEDas Don Alberto"
-  - Buenas Tardes Don Alberto
-  - Buenas Noches  Don Alberto
-  - "Buen d\xEDa"
-  - Hola Don Alberto
+  - En donde vive
+  - De donde viene
+  - Vive cerca
+  - En que lugar vive
   AnimationName: talk_2
+  PatienteResponse: {fileID: 8300000, guid: 75edf53b7c5cb6a41818a07210b25f21, type: 3}

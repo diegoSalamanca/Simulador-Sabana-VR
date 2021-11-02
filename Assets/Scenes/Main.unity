@@ -1406,7 +1406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &496364449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4333,7 +4333,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Muy Bien, Don Alberto le ha entendido correctamente.
+  m_text: "Muy Bien, \nDon Alberto le ha entendido \ncorrectamente."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 962845918742a0747b4d733bcced7450, type: 2}
   m_sharedMaterial: {fileID: -6609316196551287304, guid: 962845918742a0747b4d733bcced7450,
@@ -4361,8 +4361,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4919,9 +4919,19 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
+      propertyPath: UserData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e697f29b913b3e45b44fdb19fe0f658,
+        type: 2}
+    - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
       propertyPath: DonAlbertoCanvasController
       value: 
       objectReference: {fileID: 707497874}
+    - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
+      propertyPath: DialogsScriptableNurseFemale
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e10a7ff93c8f2d4ab88a121e9896062,
+        type: 2}
     - target: {fileID: 8172144713741862917, guid: d0a947bf4ae4440dba55e182a271c440,
         type: 3}
       propertyPath: m_Name
@@ -6105,8 +6115,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Presione el bot\xF3n \u2013 A - para hablar.  Hable despacio y claro.\r\nCuando
-    termine suelte el bot\xF3n para que Don Alberto escuche su frase.  \r\n"
+  m_text: "Presione el bot\xF3n \u2013 A - para hablar.  \nHable despacio y claro.\r\nCuando
+    termine suelte el bot\xF3n para que \nDon Alberto escuche su frase.  \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 962845918742a0747b4d733bcced7450, type: 2}
   m_sharedMaterial: {fileID: -6609316196551287304, guid: 962845918742a0747b4d733bcced7450,
@@ -6134,8 +6144,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
-  m_fontSizeBase: 18
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -6870,7 +6880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Don Alberto no le ha entendido, Por favor Intente nuevamente.\r\nHable
+  m_text: "Don Alberto no le ha entendido,\n Por favor Intente nuevamente.\r\nHable
     claro y despacio \r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 962845918742a0747b4d733bcced7450, type: 2}
@@ -6899,8 +6909,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -14790,6 +14800,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6517167841423421791}
+    - target: {fileID: 1760300421159685852, guid: c17c0964bc69d8146805da8b8edce69c,
+        type: 3}
+      propertyPath: UserData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e697f29b913b3e45b44fdb19fe0f658,
+        type: 2}
     - target: {fileID: 1760300421747062553, guid: c17c0964bc69d8146805da8b8edce69c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -14805,6 +14821,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2031925024}
+    - target: {fileID: 1760300422493567017, guid: c17c0964bc69d8146805da8b8edce69c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17c0964bc69d8146805da8b8edce69c, type: 3}
 --- !u!4 &282136574231130117

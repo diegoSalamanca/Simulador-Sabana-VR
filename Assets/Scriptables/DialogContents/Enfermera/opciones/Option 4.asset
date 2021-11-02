@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: Option 4
+  m_EditorClassIdentifier: 
+  Options:
+  - "Cu\xE1l es su identificaci\xF3n"
+  - "Cu\xE1l es su n\xFAmero de c\xE9dula"
+  - "Su cedula c\xF3mo es"
+  - Cual es su documento de identidad
+  - "C\xF3mo es su documento de identidad"
+  AnimationName: talk_3
+  PatienteResponse: {fileID: 8300000, guid: 211a18ee3af18284caae8548efa7ea71, type: 3}

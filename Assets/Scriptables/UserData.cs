@@ -10,5 +10,6 @@ public class UserData : ScriptableObject
     public int id;
     public int especialidad;
     public int skin;
+    public int gender;
 
 }

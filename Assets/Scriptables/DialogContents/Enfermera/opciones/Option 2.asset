@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: Option 2
+  m_EditorClassIdentifier: 
+  Options:
+  - Soy el enfermero que lo va atender en urgencias
+  - "Soy el Enfermero que le cuidar\xE1"
+  - "Me presento soy el Enfermero que estar\xE1 con usted el d\xEDa de hoy"
+  AnimationName: talk
+  PatienteResponse: {fileID: 8300000, guid: ebc7fd54dae95b94697b1389ef4d9fee, type: 3}

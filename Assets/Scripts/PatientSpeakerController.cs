@@ -11,7 +11,9 @@ public class PatientSpeakerController : MonoBehaviour
 
     public bool ActivatePatientDialog { get; set; }
 
-    public DialogsScriptable DialogsScriptableNurseMale;
+    public UserData UserData;
+
+    public DialogsScriptable DialogsScriptableNurseMale, DialogsScriptableNurseFemale;
 
     DialogsScriptable SelectDialogObject;
 
@@ -47,7 +49,21 @@ public class PatientSpeakerController : MonoBehaviour
         Animator = GetComponent<Animator>();
         ActivatePatientDialog = false;
 
-        SelectDialogObject = DialogsScriptableNurseMale;
+        SelectDialogScriptable();
+
+
+    }
+
+    public void SelectDialogScriptable()
+    {
+        if (UserData.gender == 0)
+        {
+            SelectDialogObject = DialogsScriptableNurseMale;
+        }
+        else
+        {
+            SelectDialogObject = DialogsScriptableNurseFemale;
+        }
     }
 
     public void SetActivatePatientDialog(bool value)
@@ -62,13 +78,10 @@ public class PatientSpeakerController : MonoBehaviour
         AudioSource.PlayOneShot(clip);
     }
 
-    public void PlayAnimation()
-    {
-
-    }
-
     public void AnalizeString(string value)
     {
+        SelectDialogScriptable();
+
         if (ActivatePatientDialog)
         {
             for (int i = 0; i < SelectDialogObject.Options.Length; i++)
@@ -78,7 +91,7 @@ public class PatientSpeakerController : MonoBehaviour
                     if (NormalizeString(value).Equals(NormalizeString(opt), System.StringComparison.InvariantCultureIgnoreCase))
                     {
                         SoundManager.PlaySoundByIndex(2);
-                        StartCoroutine(PlayAudio(SelectDialogObject.PatienteResponse[i]));                        
+                        StartCoroutine(PlayAudio(SelectDialogObject.Options[i].PatienteResponse));                        
                         Animator.SetTrigger(SelectDialogObject.Options[i].AnimationName);
                         DonAlbertoCanvasController.EnlabeMessage(1);
                         return;

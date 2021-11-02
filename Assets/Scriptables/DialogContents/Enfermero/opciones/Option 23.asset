@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: Option 23
+  m_EditorClassIdentifier: 
+  Options:
+  - "Con qu\xE9 relaciona su dolor "
+  - "Le hab\xEDa pasado esto antes"
+  - "Que actividad estaba realizando cuando le comenz\xF3 el dolor"
+  AnimationName: talk_with_hand
+  PatienteResponse: {fileID: 8300000, guid: f575e92dbd92d8a408bbaa068c20ebac, type: 3}

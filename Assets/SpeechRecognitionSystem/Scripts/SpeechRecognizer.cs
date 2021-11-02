@@ -72,8 +72,7 @@ internal class SpeechRecognizer : MonoBehaviour {
     public void OnActionKey(InputAction.CallbackContext value)
     {
         if (value.started)
-        {                        
-            IsRecogniced = true;
+        {  
             _result = string.Empty;
             _partialResult = string.Empty;            
             _resultReady = 0;
@@ -81,6 +80,7 @@ internal class SpeechRecognizer : MonoBehaviour {
             SoundManager.Instance.PlayAuidoRecognicerStartSound();
             SoundInfoCanvasGroup.alpha = 1;
             VoiceFillInstruction.SetActive(false);
+            IsRecogniced = true;
             return;
         }
         else if (value.canceled)

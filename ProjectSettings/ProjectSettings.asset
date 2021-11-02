@@ -17,7 +17,7 @@ PlayerSettings:
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.39607847, g: 0.5058824, b: 0.7058824, a: 1}
-  m_ShowUnitySplashScreen: 0
+  m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 0
   m_SplashScreenOverlayOpacity: 1
   m_SplashScreenAnimation: 1
@@ -39,9 +39,7 @@ PlayerSettings:
     y: 0
     width: 1
     height: 1
-  m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 9ed2b6dc044e46443a3c0b48f6340bc9, type: 3}
-    duration: 2
+  m_SplashScreenLogos: []
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: a254d48980b921e4088ea7dc52b4d101,
     type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -137,7 +135,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.26b
+  bundleVersion: 0.28a
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
@@ -172,6 +170,11 @@ PlayerSettings:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 4fcf40f2259d86545bbdc4cd9e955a41, type: 2}
+  - {fileID: -9076521188721556642, guid: e42a137f56e956e49ab962219225bd12, type: 2}
+  - {fileID: -5565266436989111185, guid: ea5964e5b6a75614b95d51ed578ad8ef, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
