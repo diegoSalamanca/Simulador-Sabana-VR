@@ -18,5 +18,8 @@ MonoBehaviour:
   - Ha tenido COVID
   - Sospechoso de COVID
   - Positivo para COVID
+  KeyWords:
+  - cobi
+  - cobid
   AnimationName: negative
   PatienteResponse: {fileID: 8300000, guid: fe3c3a28a2f512b46960976f950ee4ca, type: 3}
