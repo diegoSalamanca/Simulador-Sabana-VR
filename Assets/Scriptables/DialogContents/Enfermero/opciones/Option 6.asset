@@ -16,5 +16,8 @@ MonoBehaviour:
   - "Qu\xE9 edad tiene"
   - "Cu\xE1ntos a\xF1os tiene "
   - "Cu\xE1l es su edad"
+  KeyWords:
+  - edad
+  - "a\xF1os"
   AnimationName: talk_2
   PatienteResponse: {fileID: 8300000, guid: a2b580339266bd542919cd4fe4192c45, type: 3}

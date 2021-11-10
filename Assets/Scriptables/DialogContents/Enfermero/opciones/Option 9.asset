@@ -17,5 +17,11 @@ MonoBehaviour:
   - "Alguien lo acompa\xF1a"
   - "Qui\xE9n lo trae"
   - Como se llama su esposa
+  KeyWords:
+  - esposa
+  - "acompa\xF1ante"
+  - "acompa\xF1a"
+  - trajo
+  - trae
   AnimationName: talk_2
   PatienteResponse: {fileID: 8300000, guid: 233b01c0cac6aab4ab8916a1ff417b90, type: 3}

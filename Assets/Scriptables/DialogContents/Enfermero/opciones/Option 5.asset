@@ -19,5 +19,11 @@ MonoBehaviour:
   - "Cont\xE9steme unas preguntas"
   - Voy a hacerle unas preguntas
   - Debo hacer unas preguntas
+  KeyWords:
+  - preguntas
+  - datos
+  - contesteme
+  - historia
+  - clinica
   AnimationName: talk
   PatienteResponse: {fileID: 8300000, guid: 135767079e0a7184da9105eb529d16fc, type: 3}

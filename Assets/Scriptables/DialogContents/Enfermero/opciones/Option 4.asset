@@ -18,5 +18,10 @@ MonoBehaviour:
   - "Su cedula c\xF3mo es"
   - Cual es su documento de identidad
   - "C\xF3mo es su documento de identidad"
+  KeyWords:
+  - identificacion
+  - cedula
+  - identidad
+  - documento
   AnimationName: talk_3
   PatienteResponse: {fileID: 8300000, guid: 211a18ee3af18284caae8548efa7ea71, type: 3}

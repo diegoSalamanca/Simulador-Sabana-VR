@@ -16,5 +16,10 @@ MonoBehaviour:
   - Estado civil
   - "Cu\xE1l es su estado civil"
   - Usted es casado o soltero
+  KeyWords:
+  - casado
+  - soltero
+  - estado
+  - civil
   AnimationName: talk_2
   PatienteResponse: {fileID: 8300000, guid: ead0c1944bc588e40b6dc9b8658f4e63, type: 3}

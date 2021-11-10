@@ -16,5 +16,12 @@ MonoBehaviour:
   - Soy el enfermero que lo va atender en urgencias
   - "Soy el Enfermero que le cuidar\xE1"
   - "Me presento soy el Enfermero que estar\xE1 con usted el d\xEDa de hoy"
+  KeyWords:
+  - enfermero
+  - urgencias
+  - presento
+  - cuidara
+  - cuidar
+  - hoy
   AnimationName: talk
   PatienteResponse: {fileID: 8300000, guid: 135767079e0a7184da9105eb529d16fc, type: 3}

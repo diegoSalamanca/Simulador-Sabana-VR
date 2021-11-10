@@ -20,5 +20,10 @@ MonoBehaviour:
   - Trabaja
   - "Qu\xE9 trabajo tiene"
   - "Cu\xE1l es su ocupaci\xF3n"
+  KeyWords:
+  - dedica
+  - profesion
+  - trabajo
+  - ocupacion
   AnimationName: talk_3
   PatienteResponse: {fileID: 8300000, guid: 2b5b223b7a6ada046b64d4d99b5843fd, type: 3}

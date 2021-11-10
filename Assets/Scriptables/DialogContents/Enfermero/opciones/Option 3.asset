@@ -19,5 +19,10 @@ MonoBehaviour:
   - Su nombre completo por favor
   - Como es su nombre
   - "C\xF3mo se llama"
+  KeyWords:
+  - nombre
+  - apellido
+  - llama
+  - completo
   AnimationName: talk_3
   PatienteResponse: {fileID: 8300000, guid: 87e19442da2ff434da27d2f82f862479, type: 3}

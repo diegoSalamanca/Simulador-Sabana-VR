@@ -82,6 +82,8 @@ public class PatientSpeakerController : MonoBehaviour
     {
         SelectDialogScriptable();
 
+        var speakerSayList = new List<string>(value.Split(" "));
+
         if (ActivatePatientDialog)
         {
             for (int i = 0; i < SelectDialogObject.Options.Length; i++)
@@ -97,6 +99,50 @@ public class PatientSpeakerController : MonoBehaviour
                         return;
                     }                   
                 }
+            }
+
+            var coincidentPhrases = new List<string>();
+
+            for (int i = 0; i < SelectDialogObject.Options.Length; i++)
+            {
+                foreach (var keyword in SelectDialogObject.Options[i].KeyWords)
+                {
+                    foreach (var speakerWord in speakerSayList)
+                    {
+                        if (NormalizeString(speakerWord).Equals(NormalizeString(keyword), System.StringComparison.InvariantCultureIgnoreCase))
+                        {
+                            var concidenceFlag = false;
+
+                            foreach (var phrase in SelectDialogObject.Options[i].Options)
+                            {
+                                var optionWords = new List<string>(phrase.Split(" "));                                
+
+                                foreach (var worditem in optionWords)
+                                {                                   
+
+                                    if (NormalizeString(worditem).Equals(NormalizeString(keyword), System.StringComparison.InvariantCultureIgnoreCase) && !concidenceFlag)
+                                    {
+                                        concidenceFlag = true;
+                                        //print("Match =" + keyword + " in " + phrase);
+                                        coincidentPhrases.Add(phrase);                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            if (coincidentPhrases.Count > 0)
+            {
+                foreach (var item in coincidentPhrases)
+                {
+                    print("Match =" + item);
+                }
+
+
+
+                return;
             }
 
             DontMatch();
