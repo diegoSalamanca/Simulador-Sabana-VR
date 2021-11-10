@@ -6,6 +6,21 @@ using System.Text.RegularExpressions;
 
 public class PatientSpeakerController : MonoBehaviour
 {
+
+    private static PatientSpeakerController _instance;
+    public static PatientSpeakerController Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = GameObject.FindObjectOfType<PatientSpeakerController>();
+            }
+
+            return _instance;
+        }
+    }
+
     public AudioSource AudioSource;
     Animator Animator;
 
@@ -17,9 +32,7 @@ public class PatientSpeakerController : MonoBehaviour
 
     DialogsScriptable SelectDialogObject;
 
-    SoundManager SoundManager;
-
-    public DonAlbertoCanvasController DonAlbertoCanvasController;
+    SoundManager SoundManager;   
 
     public bool CompareStringsWithOutDiacritics(string value1, string value2)
     {
@@ -51,7 +64,7 @@ public class PatientSpeakerController : MonoBehaviour
 
         SelectDialogScriptable();
 
-
+        PacienteCanvasManager.Instance.SetNeutralmessage("Presione el botón – A - para hablar. Hable despacio y claro. Cuando termine suelte el botón para que Jairo escuche su frase.");
     }
 
     public void SelectDialogScriptable()
@@ -91,17 +104,16 @@ public class PatientSpeakerController : MonoBehaviour
                 foreach (var opt in SelectDialogObject.Options[i].Options)
                 {
                     if (NormalizeString(value).Equals(NormalizeString(opt), System.StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        SoundManager.PlaySoundByIndex(2);
+                    {                        
                         StartCoroutine(PlayAudio(SelectDialogObject.Options[i].PatienteResponse));                        
                         Animator.SetTrigger(SelectDialogObject.Options[i].AnimationName);
-                        DonAlbertoCanvasController.EnlabeMessage(1);
+                        PacienteCanvasManager.Instance.SetCorrectmessage("Muy Bien, Jairo le ha entendido correctamente.");
                         return;
                     }                   
                 }
             }
 
-            var coincidentPhrases = new List<string>();
+            var coincidentPhrases = new List<Matchitem>();
 
             for (int i = 0; i < SelectDialogObject.Options.Length; i++)
             {
@@ -123,8 +135,10 @@ public class PatientSpeakerController : MonoBehaviour
                                     if (NormalizeString(worditem).Equals(NormalizeString(keyword), System.StringComparison.InvariantCultureIgnoreCase) && !concidenceFlag)
                                     {
                                         concidenceFlag = true;
-                                        //print("Match =" + keyword + " in " + phrase);
-                                        coincidentPhrases.Add(phrase);                                        
+                                        var MatchitemCoincidence = new Matchitem();
+                                        MatchitemCoincidence.MatchPhrase = phrase;
+                                        MatchitemCoincidence.OptionsScriptable = SelectDialogObject.Options[i];
+                                        coincidentPhrases.Add(MatchitemCoincidence);                                        
                                     }
                                 }
                             }
@@ -134,24 +148,32 @@ public class PatientSpeakerController : MonoBehaviour
             }
 
             if (coincidentPhrases.Count > 0)
-            {
-                foreach (var item in coincidentPhrases)
-                {
-                    print("Match =" + item);
-                }
-
-
-
+            {      
+                PacienteCanvasManager.Instance.SetPhrases(coincidentPhrases);
                 return;
             }
 
             DontMatch();
         }
        
-    } 
+    }
+
+    public void PlayDialogObject(OptionsScriptable option)
+    {
+        StartCoroutine(PlayAudio(option.PatienteResponse));
+        Animator.SetTrigger(option.AnimationName);        
+    }
+
     public void DontMatch()
     {
-        SoundManager.PlaySoundByIndex(3);
-        DonAlbertoCanvasController.EnlabeMessage(2);
+        PacienteCanvasManager.Instance.SetIncorrectmessage("Jairo no le ha entendido, Por favor Intente nuevamente");
     }
+}
+
+public class Matchitem
+{
+    public OptionsScriptable OptionsScriptable;
+
+    public string MatchPhrase;
+
 }

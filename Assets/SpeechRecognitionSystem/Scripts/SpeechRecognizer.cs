@@ -81,6 +81,8 @@ internal class SpeechRecognizer : MonoBehaviour {
             SoundInfoCanvasGroup.alpha = 1;
             VoiceFillInstruction.SetActive(false);
             IsRecogniced = true;
+            PacienteCanvasManager.Instance.HideCanvas();
+
             return;
         }
         else if (value.canceled)
