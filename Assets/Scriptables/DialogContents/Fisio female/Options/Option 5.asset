@@ -26,4 +26,4 @@ MonoBehaviour:
   - historia
   - clinica
   AnimationName: talk
-  PatienteResponse: {fileID: 8300000, guid: 135767079e0a7184da9105eb529d16fc, type: 3}
+  PatienteResponse: {fileID: 8300000, guid: 1cb7b32856d7a7a42802fbb6599fa459, type: 3}

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: aire en reposo
+  m_EditorClassIdentifier: 
+  Options:
+  - "Le falta el aire cuando est\xE1 en reposo"
+  KeyWords:
+  - aire
+  - reposo
+  - falta
+  AnimationName: positive
+  PatienteResponse: {fileID: 8300000, guid: 9cc7082777eb7fd4a853b9f17a86100f, type: 3}

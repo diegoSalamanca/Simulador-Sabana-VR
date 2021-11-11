@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Option 2
   m_EditorClassIdentifier: 
   Options:
-  - Soy el enfermero que lo va atender en urgencias
-  - "Soy el Enfermero que le cuidar\xE1"
-  - "Me presento soy el Enfermero que estar\xE1 con usted el d\xEDa de hoy"
+  - Soy el doctor que lo va atender en urgencias
+  - "Soy el doctor que le cuidar\xE1"
+  - "Me presento soy el doctor que estar\xE1 con usted el d\xEDa de hoy"
   KeyWords:
-  - enfermero
+  - doctor
   - urgencias
   - presento
   - cuidara

@@ -28,5 +28,5 @@ MonoBehaviour:
   - tardes
   - jairo
   - don
-  AnimationName: talk_2
+  AnimationName: talk
   PatienteResponse: {fileID: 8300000, guid: 788b3a8f51aff9d48b879f06c28ac67c, type: 3}

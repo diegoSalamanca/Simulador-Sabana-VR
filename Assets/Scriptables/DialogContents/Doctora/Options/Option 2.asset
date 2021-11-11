@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Option 2
   m_EditorClassIdentifier: 
   Options:
-  - Soy el enfermero que lo va atender en urgencias
-  - "Soy el Enfermero que le cuidar\xE1"
-  - "Me presento soy el Enfermero que estar\xE1 con usted el d\xEDa de hoy"
+  - Soy la doctora que lo va atender en urgencias
+  - "Soy la doctora que le cuidar\xE1"
+  - "Me presento soy la doctora que estar\xE1 con usted el d\xEDa de hoy"
   KeyWords:
-  - enfermero
+  - doctora
   - urgencias
   - presento
   - cuidara
   - cuidar
   - hoy
   AnimationName: talk
-  PatienteResponse: {fileID: 8300000, guid: 135767079e0a7184da9105eb529d16fc, type: 3}
+  PatienteResponse: {fileID: 8300000, guid: ea3c9c6ff3dc970499fa183b38687fdf, type: 3}

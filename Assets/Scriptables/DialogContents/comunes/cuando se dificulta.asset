@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: cuando se dificulta
+  m_EditorClassIdentifier: 
+  Options:
+  - "Cuando se le dificulta m\xE1s"
+  KeyWords:
+  - dificulta
+  AnimationName: talk
+  PatienteResponse: {fileID: 8300000, guid: 83032112e8b51284faf67d9c165e8f0c, type: 3}

@@ -121,10 +121,16 @@ public class PatientSpeakerController : MonoBehaviour
     }
 
 
-     IEnumerator PlayAudio(AudioClip clip)
+    IEnumerator PlayAudio(AudioClip clip, bool camilla)
     {
         yield return new WaitForSeconds(0.5f);
         AudioSource.PlayOneShot(clip);
+
+        if (camilla)
+            yield break;
+
+        yield return new WaitUntil(() => AudioSource.isPlaying == false);
+        Animator.SetTrigger("idle_camilla");
     }
 
     public void AnalizeString(string value)
@@ -140,8 +146,13 @@ public class PatientSpeakerController : MonoBehaviour
                 foreach (var opt in SelectDialogObject.Options[i].Options)
                 {
                     if (NormalizeString(value).Equals(NormalizeString(opt), System.StringComparison.InvariantCultureIgnoreCase))
-                    {                        
-                        StartCoroutine(PlayAudio(SelectDialogObject.Options[i].PatienteResponse));                        
+                    {
+                        var camilla = false;
+
+                        if (SelectDialogObject.Options[i].name == "acuestese")
+                            camilla = true;
+
+                        StartCoroutine(PlayAudio(SelectDialogObject.Options[i].PatienteResponse, camilla));                        
                         Animator.SetTrigger(SelectDialogObject.Options[i].AnimationName);
                         PacienteCanvasManager.Instance.SetCorrectmessage("Muy Bien, Jairo le ha entendido correctamente.");
                         return;
@@ -204,7 +215,13 @@ public class PatientSpeakerController : MonoBehaviour
 
     public void PlayDialogObject(OptionsScriptable option)
     {
-        StartCoroutine(PlayAudio(option.PatienteResponse));
+        var camilla = false;
+
+        if(option.name == "acuestese")
+            camilla = true; 
+
+
+        StartCoroutine(PlayAudio(option.PatienteResponse, camilla));
         Animator.SetTrigger(option.AnimationName);        
     }
 

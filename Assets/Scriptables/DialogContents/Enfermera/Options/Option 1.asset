@@ -29,4 +29,4 @@ MonoBehaviour:
   - jairo
   - don
   AnimationName: talk_2
-  PatienteResponse: {fileID: 8300000, guid: 336970b42eba7c648a8d59b0837002c7, type: 3}
+  PatienteResponse: {fileID: 8300000, guid: 1f1ddaf4c824b1b4d9c97a28be25536b, type: 3}

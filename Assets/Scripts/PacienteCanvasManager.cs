@@ -90,14 +90,15 @@ public class PacienteCanvasManager : MonoBehaviour
 
         for (int i = 0; i < matchsUnsorted.Count; i++)
         {
-            if (i > 5)
+            if (i > 4)
             { break; }
 
             var opt = Instantiate(OptionPrefab, OptionBox.transform);
             opt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = matchsUnsorted[i].MatchPhrase;
-            opt.GetComponent<Button>().onClick.AddListener(() => { PatientSpeakerController.Instance.PlayDialogObject(matchsUnsorted[i].OptionsScriptable); HideCanvas(); });
-        }
-        
+            opt.GetComponent<Button>().onClick.AddListener(() => {  HideCanvas();  });
+            opt.GetComponent<OptPlayer>().SetOptData(matchsUnsorted[i].OptionsScriptable, matchsUnsorted[i].MatchPhrase);            
+        }        
+
         ShowCanvas();
     }
 

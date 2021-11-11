@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: antecedentes familia
+  m_EditorClassIdentifier: 
+  Options:
+  - Tiene antecedentes en su familia
+  - Enfermedades en su familia
+  - En su familia sufren alguna enfermedad
+  - En su familia alguien tiene problemas de salud mental
+  KeyWords:
+  - familia
+  - enfermedad
+  - mental
+  - problemas
+  - salud
+  - antecedentes
+  AnimationName: positive
+  PatienteResponse: {fileID: 8300000, guid: d3c69c956e951284e8df2fd54c900b7c, type: 3}
