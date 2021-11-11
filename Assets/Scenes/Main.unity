@@ -1564,7 +1564,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 10
+  m_Spacing: 8
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -4932,13 +4932,33 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 1e697f29b913b3e45b44fdb19fe0f658,
         type: 2}
     - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
+      propertyPath: DialogsScriptableFisioMale
+      value: 
+      objectReference: {fileID: 11400000, guid: b25a0ab0733ade44dafea4ec2290ccaa,
+        type: 2}
+    - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
       propertyPath: DonAlbertoCanvasController
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
+      propertyPath: DialogsScriptableDoctorMale
+      value: 
+      objectReference: {fileID: 11400000, guid: 67bcec0a814df8b47a4c52a3e77305f1,
+        type: 2}
+    - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
+      propertyPath: DialogsScriptableFisioFemale
+      value: 
+      objectReference: {fileID: 11400000, guid: c9a8b0e274e316a478a774e579cc7d07,
+        type: 2}
+    - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
       propertyPath: DialogsScriptableNurseFemale
       value: 
-      objectReference: {fileID: 11400000, guid: 2e10a7ff93c8f2d4ab88a121e9896062,
+      objectReference: {fileID: 11400000, guid: fb7d205ba8fa4ad42846d25a3dec5f35,
+        type: 2}
+    - target: {fileID: 2031925024, guid: d0a947bf4ae4440dba55e182a271c440, type: 3}
+      propertyPath: DialogsScriptableDoctorFemale
+      value: 
+      objectReference: {fileID: 11400000, guid: bab4c05e00afbf54c869521a6eaf070a,
         type: 2}
     - target: {fileID: 8172144713741862917, guid: d0a947bf4ae4440dba55e182a271c440,
         type: 3}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6f75de57c2f921044b48487639856cd2, type: 3}
-  m_Name: Enfermero
+  m_Name: Doctora
   m_EditorClassIdentifier: 
   Options:
   - {fileID: 11400000, guid: 763a421851eb6994f9af333ee4235ed2, type: 2}
@@ -62,6 +62,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 919bd37facd2626478e277a406d2f852, type: 2}
   - {fileID: 11400000, guid: 658ea793e69dd174d9334dac4bf597b3, type: 2}
   - {fileID: 11400000, guid: 4df3fc1568f7bbd4db58bf786e88c7c1, type: 2}
-  - {fileID: 11400000, guid: 61a8a825cc742ff479163d49a563ece0, type: 2}
-  - {fileID: 11400000, guid: 3cff20dc379bc36448cc733a12a91f8c, type: 2}
-  - {fileID: 11400000, guid: 499d1b9afa450e94bb075fd9940bcdc5, type: 2}

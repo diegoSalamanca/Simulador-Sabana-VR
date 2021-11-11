@@ -28,7 +28,7 @@ public class PatientSpeakerController : MonoBehaviour
 
     public UserData UserData;
 
-    public DialogsScriptable DialogsScriptableNurseMale, DialogsScriptableNurseFemale;
+    public DialogsScriptable DialogsScriptableNurseMale, DialogsScriptableNurseFemale, DialogsScriptableDoctorMale, DialogsScriptableDoctorFemale, DialogsScriptableFisioMale, DialogsScriptableFisioFemale;
 
     DialogsScriptable SelectDialogObject;
 
@@ -71,11 +71,47 @@ public class PatientSpeakerController : MonoBehaviour
     {
         if (UserData.gender == 0)
         {
-            SelectDialogObject = DialogsScriptableNurseMale;
+            switch (UserData.especialidad)
+            {
+                default:
+                    SelectDialogObject = DialogsScriptableDoctorMale;
+                    break;
+
+                case 0:
+                    SelectDialogObject = DialogsScriptableDoctorMale;
+                    break;
+
+                case 1:
+                    SelectDialogObject = DialogsScriptableNurseMale;
+                    break;
+
+                case 2:
+                    SelectDialogObject = DialogsScriptableFisioMale;
+                    break;
+            }
+            
         }
         else
         {
-            SelectDialogObject = DialogsScriptableNurseFemale;
+            switch (UserData.especialidad)
+            {
+                default:
+                    SelectDialogObject = DialogsScriptableDoctorFemale;
+                    break;
+
+                case 0:
+                    SelectDialogObject = DialogsScriptableDoctorFemale;
+                    break;
+
+                case 1:
+                    SelectDialogObject = DialogsScriptableNurseFemale;
+                    break;
+
+                case 2:
+                    SelectDialogObject = DialogsScriptableFisioFemale;
+                    break;
+            }
+           
         }
     }
 
@@ -141,6 +177,14 @@ public class PatientSpeakerController : MonoBehaviour
                                         coincidentPhrases.Add(MatchitemCoincidence);                                        
                                     }
                                 }
+                            }
+
+                            if (!concidenceFlag)
+                            {
+                                var MatchitemCoincidence = new Matchitem();
+                                MatchitemCoincidence.MatchPhrase = SelectDialogObject.Options[i].Options[0];
+                                MatchitemCoincidence.OptionsScriptable = SelectDialogObject.Options[i];
+                                coincidentPhrases.Add(MatchitemCoincidence);
                             }
                         }
                     }

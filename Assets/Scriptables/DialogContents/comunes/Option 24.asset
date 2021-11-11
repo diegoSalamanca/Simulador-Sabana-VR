@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
+  m_Name: Option 24
+  m_EditorClassIdentifier: 
+  Options:
+  - "Puede decir cu\xE1nto le duele"
+  - "de cero a diez siendo diez el peor dolor de su vida, \xBFcu\xE1nto le duele"
+  - en una escala de cero a diez cuanto es el dolor
+  - Como es el dolor
+  - 'De uno a diez como describe el dolor '
+  KeyWords:
+  - duele
+  - dolor
+  - diez
+  - uno
+  - escala
+  - peor
+  AnimationName: talk_3
+  PatienteResponse: {fileID: 8300000, guid: f3234319085e0e44da115e784c1ec891, type: 3}

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class PacienteCanvasManager : MonoBehaviour
 {
@@ -84,12 +85,19 @@ public class PacienteCanvasManager : MonoBehaviour
         Option.SetActive(true);
         Message.SetActive(false);
         SoundManager.PlaySoundByIndex(2);
-        foreach (var item in matchs)
+
+        var matchsUnsorted = matchs.OrderBy(x => Random.value).ToList();
+
+        for (int i = 0; i < matchsUnsorted.Count; i++)
         {
+            if (i > 5)
+            { break; }
+
             var opt = Instantiate(OptionPrefab, OptionBox.transform);
-            opt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = item.MatchPhrase;
-            opt.GetComponent<Button>().onClick.AddListener(() => { PatientSpeakerController.Instance.PlayDialogObject(item.OptionsScriptable); HideCanvas(); });
+            opt.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = matchsUnsorted[i].MatchPhrase;
+            opt.GetComponent<Button>().onClick.AddListener(() => { PatientSpeakerController.Instance.PlayDialogObject(matchsUnsorted[i].OptionsScriptable); HideCanvas(); });
         }
+        
         ShowCanvas();
     }
 
