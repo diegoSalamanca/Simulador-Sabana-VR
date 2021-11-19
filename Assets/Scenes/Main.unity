@@ -14826,12 +14826,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6517167841423421791}
-    - target: {fileID: 1760300421159685852, guid: c17c0964bc69d8146805da8b8edce69c,
-        type: 3}
-      propertyPath: UserData
-      value: 
-      objectReference: {fileID: 11400000, guid: 1e697f29b913b3e45b44fdb19fe0f658,
-        type: 2}
     - target: {fileID: 1760300421747062553, guid: c17c0964bc69d8146805da8b8edce69c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -14847,11 +14841,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2031925024}
-    - target: {fileID: 1760300422493567017, guid: c17c0964bc69d8146805da8b8edce69c,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c17c0964bc69d8146805da8b8edce69c, type: 3}
 --- !u!4 &282136574231130117
@@ -26046,6 +26035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: VirtualKeyboardVR
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971689920965766492, guid: e9636c796a8dafe4a852646223c26445,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9636c796a8dafe4a852646223c26445, type: 3}

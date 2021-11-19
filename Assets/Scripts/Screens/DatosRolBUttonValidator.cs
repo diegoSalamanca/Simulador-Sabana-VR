@@ -14,6 +14,7 @@ public class DatosRolBUttonValidator : MonoBehaviour
 
     public GameObject nextButon, nextButonRol, nextButonPlayer;
 
+
   
     public void ValidatorDatos()
     {

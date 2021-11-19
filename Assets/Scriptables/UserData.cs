@@ -7,7 +7,7 @@ using UnityEngine;
 public class UserData : ScriptableObject
 {
     public string name;
-    public int id;
+    public string id;
     public int especialidad;
     public int skin;
     public int gender;
