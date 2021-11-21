@@ -10,23 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option 1
+  m_Name: "Presentaci\xF3n"
   m_EditorClassIdentifier: 
   Options:
-  - "Buenos d\xEDas Jairo"
-  - Buenas Tardes Jairo
-  - Buenas Noches  Don Alberto
-  - "Buen d\xEDa"
-  - Hola Don Alberto
-  - hola
+  - Soy la fisioterapeuta que lo va atender en urgencias
+  - "Soy la fisioterapeuta que le cuidar\xE1"
+  - "Me presento soy la fisioterapeuta que estar\xE1 con usted el d\xEDa de hoy"
   KeyWords:
-  - Buenas
-  - dia
-  - noche
-  - noches
-  - tarde
-  - tardes
-  - jairo
-  - don
-  AnimationName: talk_2
-  PatienteResponse: {fileID: 8300000, guid: 1f1ddaf4c824b1b4d9c97a28be25536b, type: 3}
+  - fisioterapeuta
+  - urgencias
+  - presento
+  - cuidara
+  - cuidar
+  - hoy
+  AnimationName: talk
+  PatienteResponse: {fileID: 8300000, guid: 1cb7b32856d7a7a42802fbb6599fa459, type: 3}

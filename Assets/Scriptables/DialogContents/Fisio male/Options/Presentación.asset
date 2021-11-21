@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option 2
+  m_Name: "Presentaci\xF3n"
   m_EditorClassIdentifier: 
   Options:
-  - Soy la fisioterapeuta que lo va atender en urgencias
-  - "Soy la fisioterapeuta que le cuidar\xE1"
-  - "Me presento soy la fisioterapeuta que estar\xE1 con usted el d\xEDa de hoy"
+  - Soy el fisioterapeuta que lo va atender en urgencias
+  - "Soy el fisioterapeuta que le cuidar\xE1"
+  - "Me presento soy el fisioterapeuta que estar\xE1 con usted el d\xEDa de hoy"
   KeyWords:
   - fisioterapeuta
   - urgencias

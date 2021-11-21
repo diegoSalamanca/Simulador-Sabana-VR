@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option 2
+  m_Name: Voy a hacerle unas preguntas
   m_EditorClassIdentifier: 
   Options:
-  - Soy el fisioterapeuta que lo va atender en urgencias
-  - "Soy el fisioterapeuta que le cuidar\xE1"
-  - "Me presento soy el fisioterapeuta que estar\xE1 con usted el d\xEDa de hoy"
+  - Le voy a hacer unas preguntas
+  - Le voy a tomar unos datos
+  - "Vamos a hacer la historia cl\xEDnica"
+  - "Cont\xE9steme unas preguntas"
+  - Voy a hacerle unas preguntas
+  - Debo hacer unas preguntas
   KeyWords:
-  - fisioterapeuta
-  - urgencias
-  - presento
-  - cuidara
-  - cuidar
-  - hoy
+  - preguntas
+  - datos
+  - contesteme
+  - historia
+  - clinica
   AnimationName: talk
-  PatienteResponse: {fileID: 8300000, guid: 1cb7b32856d7a7a42802fbb6599fa459, type: 3}
+  PatienteResponse: {fileID: 8300000, guid: 5ec8a9b7ce24007469f3915a11fdc764, type: 3}

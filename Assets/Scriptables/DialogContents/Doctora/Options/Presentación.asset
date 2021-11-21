@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option 2
+  m_Name: "Presentaci\xF3n"
   m_EditorClassIdentifier: 
   Options:
   - Soy la doctora que lo va atender en urgencias

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using System.Text.RegularExpressions;
+using BestHTTP;
 
 public class PatientSpeakerController : MonoBehaviour
 {
@@ -32,7 +33,61 @@ public class PatientSpeakerController : MonoBehaviour
 
     DialogsScriptable SelectDialogObject;
 
-    SoundManager SoundManager;   
+    SoundManager SoundManager;
+
+    string Especialidad, Genero;
+
+    System.DateTime InitialDate;
+
+
+    public void SaveQuizzData()
+    {
+        var Data = new QuizzDataObject();
+        Data.estudiante = int.Parse(UserData.id);        
+        Data.rol = Especialidad;
+        Data.genero = Genero;
+        Data.estado = 80;
+        Data.empatia = 80;
+        Data.tacto = 80;
+        Data.comunicacion = "buena";
+        Data.contacto_visual = 80;
+        Data.tiempo_de_prueba = (int)(System.DateTime.Now - InitialDate).TotalSeconds;
+
+        Data.historia.titulo = "Listado de preguntas";
+        Data.historia.rol = Especialidad;
+        Data.historia.nombre = UserData.name;
+
+        var subhistoria = new SubHistoria();
+        Data.historia.historia.Add(subhistoria);
+        subhistoria.seccion = "Saludo/Presentación";
+
+        for (int i = 0; i < SelectDialogObject.Options.Length; i++)
+        {
+            var valor = new Valores();
+            valor.nombre = SelectDialogObject.Options[i].name;
+            valor.valor = SelectDialogObject.Options[i].valor;
+            Data.historia.historia[0].valores.Add(valor);
+        }      
+
+        ApiManager.Instance.SaveQuizzData(Data);    
+    }
+
+    public void EndApplication(HTTPRequest request, HTTPResponse response)
+    {        
+        print("test Response Code = " + response.StatusCode);
+        print("test Response = " + response.DataAsText);
+        print("Exit App");
+        Application.Quit();
+    }
+
+    public void ResetDataScriptables()
+    {
+        foreach (var item in SelectDialogObject.Options)
+        {
+            item.valor = false;
+        }
+    
+    }
 
     public bool CompareStringsWithOutDiacritics(string value1, string value2)
     {
@@ -56,13 +111,16 @@ public class PatientSpeakerController : MonoBehaviour
 
     void Start()
     {
-        
+        InitialDate = System.DateTime.Now;
+
         SoundManager = SoundManager.Instance;
          
         Animator = GetComponent<Animator>();
         ActivatePatientDialog = false;
 
         SelectDialogScriptable();
+
+        ResetDataScriptables();
 
         PacienteCanvasManager.Instance.SetNeutralmessage("Presione el botón – A - para hablar. Hable despacio y claro. Cuando termine suelte el botón para que Jairo escuche su frase.");
     }
@@ -71,44 +129,54 @@ public class PatientSpeakerController : MonoBehaviour
     {
         if (UserData.gender == 0)
         {
+            Genero = "Masculino";
             switch (UserData.especialidad)
             {
                 default:
                     SelectDialogObject = DialogsScriptableDoctorMale;
+                    Especialidad = "Medicina";
                     break;
 
                 case 0:
                     SelectDialogObject = DialogsScriptableDoctorMale;
+                    Especialidad = "Medicina";
                     break;
 
                 case 1:
                     SelectDialogObject = DialogsScriptableNurseMale;
+                    Especialidad = "Enfermería";
                     break;
 
                 case 2:
                     SelectDialogObject = DialogsScriptableFisioMale;
+                    Especialidad = "Fisioterapia";
                     break;
             }
             
         }
         else
         {
+            Genero = "Femenino";
             switch (UserData.especialidad)
             {
                 default:
                     SelectDialogObject = DialogsScriptableDoctorFemale;
+                    Especialidad = "Medicina";
                     break;
 
                 case 0:
                     SelectDialogObject = DialogsScriptableDoctorFemale;
+                    Especialidad = "Medicina";
                     break;
 
                 case 1:
                     SelectDialogObject = DialogsScriptableNurseFemale;
+                    Especialidad = "Enfermería";
                     break;
 
                 case 2:
                     SelectDialogObject = DialogsScriptableFisioFemale;
+                    Especialidad = "Fisioterapia";
                     break;
             }
            
@@ -121,10 +189,13 @@ public class PatientSpeakerController : MonoBehaviour
     }
 
 
-    IEnumerator PlayAudio(AudioClip clip, bool camilla)
+    IEnumerator PlayAudio(OptionsScriptable option, bool camilla)
     {
+
+        option.valor = true;
+
         yield return new WaitForSeconds(0.5f);
-        AudioSource.PlayOneShot(clip);
+        AudioSource.PlayOneShot(option.PatienteResponse);
 
         if (camilla)
             yield break;
@@ -152,7 +223,7 @@ public class PatientSpeakerController : MonoBehaviour
                         if (SelectDialogObject.Options[i].name == "acuestese")
                             camilla = true;
 
-                        StartCoroutine(PlayAudio(SelectDialogObject.Options[i].PatienteResponse, camilla));                        
+                        StartCoroutine(PlayAudio(SelectDialogObject.Options[i], camilla));                        
                         Animator.SetTrigger(SelectDialogObject.Options[i].AnimationName);
                         PacienteCanvasManager.Instance.SetCorrectmessage("Muy Bien, Jairo le ha entendido correctamente.");
                         return;
@@ -221,7 +292,7 @@ public class PatientSpeakerController : MonoBehaviour
             camilla = true; 
 
 
-        StartCoroutine(PlayAudio(option.PatienteResponse, camilla));
+        StartCoroutine(PlayAudio(option, camilla));
         Animator.SetTrigger(option.AnimationName);        
     }
 

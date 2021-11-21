@@ -12,4 +12,6 @@ public class OptionsScriptable : ScriptableObject
     public string AnimationName;
 
     public AudioClip PatienteResponse;
+
+    public bool valor;
 }

@@ -10,20 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option 5
+  m_Name: Saludo
   m_EditorClassIdentifier: 
   Options:
-  - Le voy a hacer unas preguntas
-  - Le voy a tomar unos datos
-  - "Vamos a hacer la historia cl\xEDnica"
-  - "Cont\xE9steme unas preguntas"
-  - Voy a hacerle unas preguntas
-  - Debo hacer unas preguntas
+  - "Buenos d\xEDas Jairo"
+  - Buenas Tardes Jairo
+  - Buenas Noches  Don Alberto
+  - "Buen d\xEDa"
+  - Hola Don Alberto
+  - hola
   KeyWords:
-  - preguntas
-  - datos
-  - contesteme
-  - historia
-  - clinica
+  - Buenas
+  - dia
+  - noche
+  - noches
+  - tarde
+  - tardes
+  - jairo
+  - don
   AnimationName: talk
-  PatienteResponse: {fileID: 8300000, guid: ea3c9c6ff3dc970499fa183b38687fdf, type: 3}
+  PatienteResponse: {fileID: 8300000, guid: 336970b42eba7c648a8d59b0837002c7, type: 3}

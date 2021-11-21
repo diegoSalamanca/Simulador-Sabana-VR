@@ -25,7 +25,7 @@ public class RolDatosButtonsSelector : MonoBehaviour
 
     public void TryLogin()
     {
-        LoginManager.TryLogin(dataID.text);
+        ApiManager.Instance.TryLogin(dataID.text);
         buttonNextRol.SetActive(false);
         errorMessage.SetActive(false);
     }

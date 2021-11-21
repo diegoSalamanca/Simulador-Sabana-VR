@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54343948d5f7ebb4b8a1b4b401124cde, type: 3}
   m_Name: UserData
   m_EditorClassIdentifier: 
-  name: 
-  id: 
-  especialidad: 0
+  name: Test 2
+  id: 12349
+  especialidad: 2
   skin: 0
-  gender: 0
+  gender: 1

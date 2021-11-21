@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 38967a6cf1279c247b796bf46abd8b2e, type: 3}
-  m_Name: Option 2
+  m_Name: "Presentaci\xF3n"
   m_EditorClassIdentifier: 
   Options:
-  - Soy el doctor que lo va atender en urgencias
-  - "Soy el doctor que le cuidar\xE1"
-  - "Me presento soy el doctor que estar\xE1 con usted el d\xEDa de hoy"
+  - Soy la enfermera que lo va atender en urgencias
+  - "Soy la enfermera que le cuidar\xE1"
+  - "Me presento soy la enfermera que estar\xE1 con usted el d\xEDa de hoy"
   KeyWords:
-  - doctor
+  - enfermera
   - urgencias
   - presento
   - cuidara
   - cuidar
   - hoy
   AnimationName: talk
-  PatienteResponse: {fileID: 8300000, guid: 5ec8a9b7ce24007469f3915a11fdc764, type: 3}
+  PatienteResponse: {fileID: 8300000, guid: ebc7fd54dae95b94697b1389ef4d9fee, type: 3}
